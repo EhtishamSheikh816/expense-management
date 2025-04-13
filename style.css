@@ -12,22 +12,38 @@ body {
 #em {
   font-size: 40px;
   font-weight: 600;
+  color: #198754;
+  margin-bottom: 30px;
 }
-
 #price {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  width: 80%;
+  border-radius: 6px;
+  margin: auto;
   gap: 12px;
   font-size: 24px;
   font-weight: 600;
+  background-color: #198754;
+  padding: 10px 20px;
 }
-
 #total {
   font-size: 30px;
   font-weight: 600;
-  color: #198754;
+  color: white;
   text-align: center;
+  margin-bottom: 16px;
+}
+#para {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: whitesmoke;
+}
+#dolr {
+  font-size: 20px;
+  font-weight: 500;
+  color: #e9eacb;
+  margin-right: 3px;
 }
 
 #main {
@@ -38,7 +54,7 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 40px;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-bottom: 60px;
 }
 
@@ -83,17 +99,28 @@ body {
   background-color: #0b5ed7;
   box-shadow: #0d6efd 0px 0px 5px;
 }
-.btn3 {
-  background-color: #dc3545;
+#btn3 {
+  color: #dc3545;
+  font-size: 17px;
 }
-.btn3:hover {
+#btn3:hover {
   transition: all 0.3s ease-in-out;
-  background-color: #c82333;
+  color: #c82333;
   box-shadow: #dc3545 0px 0px 5px;
 }
+#btn4 {
+  color: #ffc107e8;
+  font-size: 18px;
+}
+#btn4:hover {
+  transition: all 0.3s ease-in-out;
+  color: #e0a800;
+  box-shadow: #ffc107 0px 0px 5px;
+}
+
 #tdBtn {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 8px;
 }
@@ -135,4 +162,58 @@ td {
   border: 1px solid #ccc;
   font-size: 16px;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  #main {
+    width: 90%;
+  }
+  #em {
+    font-size: 30px;
+    text-align: center;
+  }
+  #price {
+    font-size: 20px;
+  }
+  #total {
+    font-size: 24px;
+  }
+  .inp {
+    width: 100%;
+    height: 30px;
+    margin: 4px 0;
+    font-size: 14px;
+  }
+  .btn {
+    padding: 5px 8px;
+    font-size: 14px;
+    margin: 4px 0;
+    width: 100%;
+    height: 30px;
+  }
+  #btn2 {
+    font-size: 14px;
+  }
+  #btn3 {
+    font-size: 14px;
+  }
+  #btn4 {
+    font-size: 14px;
+  }
+  #tableDiv {
+    width: 90%;
+  }
+  table {
+    width: 100%;
+  }
+  th {
+    font-size: 14px;
+  }
+  td {
+    font-size: 14px;
+  }
+  #tdBtn {
+    flex-direction: column;
+    align-items: center;
+  }
 }
