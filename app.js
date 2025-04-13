@@ -4,7 +4,7 @@ const getRow = document.getElementById("row");
 const getPara = document.getElementById("para");
 
 function add() {
-  getPara.innerHTML = (getInpNo.value.split().reduce((acc, crr) => acc + crr));
+  getPara.innerHTML = (getInpNo.value.split(" "));
   if (getInpTxt.value === "" || getInpNo.value === "") {
     alert("Please fill in the fields");
     return;
@@ -33,5 +33,5 @@ function edt(e) {
 }
 
 function rmve(e) {
-  e.parentNode.remove();
+  e.parentNode.parentNode.remove();
 }
