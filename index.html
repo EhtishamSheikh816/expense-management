@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="em">Express Managment</h1>
+      <div id="inpBtn">
+        <input
+          type="text"
+          name=""
+          id="inpTxt"
+          class="inp"
+          placeholder="Enter a name"
+        />
+        <input
+          type="number"
+          name=""
+          id="inpNo"
+          class="inp"
+          placeholder="Enter a price"
+        />
+        <button class="btn" onclick="add()">Add</button>
+        <button class="btn" id="btn2" onclick="clrAll()">Clear All</button>
+      </div>
+      <h1 id="total">Total Price:</h1>
+      <p id="para"></p>
+    </div>
+
+    <div id="tableDiv">
+      <table>
+        <thead>
+          <tr id="tblHead">
+            <th>No.</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="row"></tbody>
+      </table>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
