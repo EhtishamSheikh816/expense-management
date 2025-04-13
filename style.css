@@ -14,6 +14,15 @@ body {
   font-weight: 600;
 }
 
+#price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 #total {
   font-size: 30px;
   font-weight: 600;
@@ -86,6 +95,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 6px;
 }
 
 #tableDiv {
