@@ -17,9 +17,9 @@
     <h1 id="em">Expense Managment System</h1>
     <div id="main">
       <div id="rght">
-        <div id="inpBtn">
-          <span class="add">
-            <h2>Add Budge:</h2>
+        <span class="add">
+          <fieldset class="fldSet">
+            <legend><h2>Add Budge</h2></legend>
             <label for="budge" class="lbl">Budge:</label>
             <input
               type="number"
@@ -29,10 +29,12 @@
               placeholder="Enter a budge"
             />
             <button class="btn">Add Budge</button>
-          </span>
-          <span class="add">
-            <h2>Add Expense:</h2>
-            <label for="item" class="lbl">Items:</label>
+          </fieldset>
+        </span>
+        <span class="add">
+          <fieldset class="fldSet">
+            <legend><h2>Add Expense</h2></legend>
+            <label for="item" class="lbl">Items Name:</label>
             <input
               type="text"
               name="item"
@@ -49,26 +51,40 @@
               placeholder="Enter a price"
             />
             <button class="btn" onclick="add()">Add Expense</button>
-          </span>
-          <button class="btn" id="btn2" onclick="clrAll()">Reset All</button>
-        </div>
+          </fieldset>
+        </span>
+        <button class="btn" id="btn2" onclick="clrAll()">Reset All</button>
         <!-- <div id="price">
           <h1 id="total">Total Price:</h1>
           <p id="para"><span id="dolr">$</span>0</p>
         </div> -->
       </div>
       <div id="tableDiv">
+        <span id="price">
+          <h4 class="total">Total Budget: 
+            <span id="totalBudge">$0</span>
+          </h4>
+          <h4 class="total">Total Expense: 
+            <span id="totalExpenses">$0</span>
+          </h4>
+          <h4 class="total">Remaining Budget: 
+            <span id="remainingBudge">$0</span>
+          </h4>
+        </span>
+        <fieldset id="set">
+        <legend><h2>Expense List</h2></legend>
         <table>
           <thead>
             <tr id="tblHead">
               <th>No.</th>
               <th>Items</th>
-              <th>Price</th>
-              <th></th>
+              <th>Amount</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody id="row"></tbody>
         </table>
+      </fieldset>
       </div>
     </div>
 

@@ -12,7 +12,7 @@ body {
 
 #main {
   display: flex;
-  height: 100vh;
+  height: 110vh;
   gap: 8px;
 }
 
@@ -27,6 +27,7 @@ body {
 
 #rght {
   width: 40%;
+  height: 100%;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #198754;
@@ -71,21 +72,25 @@ body {
 }
 .add {
   width: 90%;
-  padding: 40px 30px;
+  padding: 30px 26px;
   margin: 30px auto;
   margin-bottom: 0px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
   background-color: wheat;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-.add h2 {
-  margin-bottom: 7px;
+.fldSet {
+  padding: 30px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
-#btn2{
+#btn2 {
   width: 90%;
   justify-content: center;
   align-items: center;
@@ -94,18 +99,19 @@ body {
   flex-direction: row;
   margin: auto;
   margin-top: 10px;
-background-color: #dc3545;
+  background-color: #dc3545;
 }
-#btn2:hover{
-  
+#btn2:hover {
   transition: all 0.3s ease-in-out;
   background-color: #c82333;
   box-shadow: #dc3545 0px 0px 5px;
 }
 
-#inpTxt{
-  margin-bottom: 8px;
+#inpTxt {
+  margin-bottom: 4px;
 }
+
+/* History */
 
 #tableDiv {
   width: 60%;
@@ -113,4 +119,38 @@ background-color: #dc3545;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #198754;
+  background-color: whitesmoke;
+}
+
+#price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 30px 26px;
+  margin: 30px auto;
+  margin-bottom: 36px;
+  border-radius: 10px;
+  background-color: wheat;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.total{
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  background-color: #198754;
+}
+
+#set{
+  width: 90%;
+  margin: auto;
+  padding: 30px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
