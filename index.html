@@ -14,44 +14,62 @@
     <title>Expense Managment</title>
   </head>
   <body>
+    <h1 id="em">Expense Managment System</h1>
     <div id="main">
-      <h1 id="em">Expense Managment System</h1>
-      <div id="inpBtn">
-        <input
-          type="text"
-          name=""
-          id="inpTxt"
-          class="inp"
-          placeholder="Enter a items name"
-        />
-        <input
-          type="number"
-          name=""
-          id="inpNo"
-          class="inp"
-          placeholder="Enter a price"
-        />
-        <button class="btn" onclick="add()">Add</button>
-        <button class="btn" id="btn2" onclick="clrAll()">Clear All</button>
+      <div id="rght">
+        <div id="inpBtn">
+          <span class="add">
+            <h2>Add Budge:</h2>
+            <label for="budge" class="lbl">Budge:</label>
+            <input
+              type="number"
+              name="budge"
+              id="inpBudge"
+              class="inp"
+              placeholder="Enter a budge"
+            />
+            <button class="btn">Add Budge</button>
+          </span>
+          <span class="add">
+            <h2>Add Expense:</h2>
+            <label for="item" class="lbl">Items:</label>
+            <input
+              type="text"
+              name="item"
+              id="inpTxt"
+              class="inp"
+              placeholder="Enter an items"
+            />
+            <label for="price" class="lbl">Price:</label>
+            <input
+              type="number"
+              name="price"
+              id="inpNo"
+              class="inp"
+              placeholder="Enter a price"
+            />
+            <button class="btn" onclick="add()">Add Expense</button>
+          </span>
+          <button class="btn" id="btn2" onclick="clrAll()">Reset All</button>
+        </div>
+        <!-- <div id="price">
+          <h1 id="total">Total Price:</h1>
+          <p id="para"><span id="dolr">$</span>0</p>
+        </div> -->
       </div>
-      <div id="price">
-        <h1 id="total">Total Price:</h1>
-        <p id="para"><span id="dolr">$</span>0</p>
+      <div id="tableDiv">
+        <table>
+          <thead>
+            <tr id="tblHead">
+              <th>No.</th>
+              <th>Items</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="row"></tbody>
+        </table>
       </div>
-    </div>
-
-    <div id="tableDiv">
-      <table>
-        <thead>
-          <tr id="tblHead">
-            <th>No.</th>
-            <th>Items</th>
-            <th>Price</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="row"></tbody>
-      </table>
     </div>
 
     <script src="app.js"></script>

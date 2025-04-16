@@ -24,9 +24,9 @@ function add() {
     <i class="fa-solid fa-trash" id="btn3" onclick="rmve(this)"></i>
     </td>
   </tr>`;
-  arry.push(numVal);
-  sum = arry.reduce((acc, curr) => acc + curr);
-  getPara.innerHTML = `<span id="dolr">$</span>${sum}`;
+  // arry.push(numVal);
+  // sum = arry.reduce((acc, curr) => acc + curr);
+  // getPara.innerHTML = `<span id="dolr">$</span>${sum}`;
   getInpTxt.value = "";
   getInpNo.value = "";
 }
