@@ -15,7 +15,7 @@ function add() {
     return;
   }
   getRow.innerHTML += `
-  <tr>
+  <tr id="tr1">
     <td> ${1} </td>
     <td> ${upprCase} </td>
     <td> ${numVal} </td>
