@@ -17,7 +17,7 @@ body {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  height: 110vh;
+  height: auto;
   gap: 8px;
 }
 
@@ -117,7 +117,9 @@ body {
 
 #tableDiv {
   width: 60%;
-  height: 100%;
+  height: auto;
+  margin:30px auto;
+  padding-bottom: 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   background: linear-gradient(to right, #edf4ff, #eff6ff);
@@ -155,8 +157,8 @@ body {
 }
 
 #tblHead {
-  background-color: gray;
-  color: #ccc;
+  background-color:  #a5c9fb;
+  color: #00559c;
   text-align: left;
 }
 
@@ -164,22 +166,23 @@ table {
   width: 100%;
   margin-top: 10px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-collapse: collapse;
 }
 th {
   padding: 8px 6px;
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
 }
 td {
   padding: 8px 6px;
   margin: 0;
-  background-color: #ccc;
-  border: 1px solid #ccc;
+  color: gray;
+  background-color: #cce5ff;
+  border: 1px solid #cce5ff;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #tdBtn {
@@ -205,4 +208,36 @@ td {
   transition: all 0.3s ease-in-out;
   color: #ffc107;
   box-shadow: yellow 0px 0px 5px;
+}
+
+/* Mobile View */
+
+@media (max-width: 768px) {
+  #main {
+    flex-direction: column;
+    height: auto;
+  }
+  #rght {
+    width: 100%;
+    height: auto;
+  }
+  #tableDiv {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+  #price {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+margin: 0 auto;
+  }
+  #set{
+    width: 80%;
+    height: auto;
+    padding: 20px 10px;
+    margin: 0 auto;
+  }
 }

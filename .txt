@@ -1,142 +1,32 @@
-.inp {
-  width: 80%;
-  height: 35px;
-  border-radius: 6px;
-  padding: 10px;
-  border: 1px groove gray;
-  font-size: 16px;
-  font-weight: 500;
-  outline: none;
-  color: rgb(48, 48, 48);
-}
-.inp:focus {
-  border: 1px solid rgb(0, 0, 0);
-  box-shadow: 0 0 5px rgb(0, 0, 0);
-  transition: all 0.3s ease-in-out;
-}
+const getInpTxt = document.getElementById("inpTxt");
+const getInpNo = document.getElementById("inpNo");
+const getRow = document.getElementById("row");
+const getTotalBudge = document.getElementById("totalBudge");
+const getTotalExpenses = document.getElementById("totalExpenses");
+const getRemainingBudge = document.getElementById("remainingBudge");
 
-.btn {
-  padding: 7px 10px;
-  margin: 4px 0;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  border: none;
-  font-weight: 400;
-  background-color: #198754;
-  color: white;
-}
-.btn:hover {
-  transition: all 0.3s ease-in-out;
-  background-color: #1d7c50;
-  box-shadow: #198754 0px 0px 5px;
-}
-#btn2 {
-  background-color: #0d6efd;
-}
-#btn2:hover {
-  transition: all 0.3s ease-in-out;
-  background-color: #0b5ed7;
-  box-shadow: #0d6efd 0px 0px 5px;
-}
-#btn3 {
-  color: #dc3545;
-  font-size: 17px;
-}
-#btn3:hover {
-  transition: all 0.3s ease-in-out;
-  color: #c82333;
-  box-shadow: #dc3545 0px 0px 5px;
-}
-#btn4 {
-  color: #ffc107e8;
-  font-size: 18px;
-}
-#btn4:hover {
-  transition: all 0.3s ease-in-out;
-  color: #e0a800;
-  box-shadow: #ffc107 0px 0px 5px;
-}
+function add() {
+  let numVal = parseFloat(getInpNo.value.trim());
+  let txtVal = getInpTxt.value.trim();
+  let upprCase = txtVal.charAt(0).toUpperCase() + txtVal.toLowerCase().slice(1);
 
-#tdBtn {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 8px;
-}
-
-#tableDiv {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
-  width: 50%;
-  margin: auto;
-}
-
-table {
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-}
-
-#tblHead {
-  background-color: gray;
-  color: #ccc;
-  text-align: left;
-}
-
-th {
-  padding: 8px 6px;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-td {
-  padding: 8px 6px;
-  margin: 0;
-  background-color: #ccc;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-#em {
-  font-size: 40px;
-  font-weight: 600;
-  color: #198754;
-  margin-bottom: 30px;
-}
-#price {
-  text-align: center;
-  width: 80%;
-  border-radius: 6px;
-  margin: auto;
-  gap: 12px;
-  font-size: 24px;
-  font-weight: 600;
-  background-color: #198754;
-  padding: 10px 20px;
-}
-#total {
-  font-size: 30px;
-  font-weight: 600;
-  color: white;
-  text-align: center;
-  margin-bottom: 16px;
-}
-#para {
-  font-size: 20px;
-  font-weight: 500;
-  text-align: center;
-  color: whitesmoke;
-}
-#dolr {
-  font-size: 20px;
-  font-weight: 500;
-  color: #e9eacb;
-  margin-right: 3px;
+  if (getInpTxt.value === "" || getInpNo.value === "" || numVal <= 0) {
+    alert("Please fill in the fields and valid amount");
+    return;
+  }
+  getRow.innerHTML += `
+  <tr id="tr1">
+    <td> ${1} </td>
+    <td> ${upprCase} </td>
+    <td> ${numVal} </td>
+    <td id="tdBtn">
+    <i class="fa-solid fa-pen-to-square" id="btn4" onclick"edt(e)"></i>
+    <i class="fa-solid fa-trash" id="btn3" onclick="rmve(this)"></i>
+    </td>
+  </tr>`;
+  arry.push(numVal);
+  sum = arry.reduce((acc, curr) => acc + curr);
+  getTotalExpenses.innerHTML = `<span id="dolr">$</span>${sum}`;
+  getInpTxt.value = "";
+  getInpNo.value = "";
 }

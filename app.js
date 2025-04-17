@@ -1,44 +1,55 @@
+const getInpBudge = document.getElementById("inpBudge");
 const getInpTxt = document.getElementById("inpTxt");
 const getInpNo = document.getElementById("inpNo");
+const getTotalBudge = document.getElementById("totalBudge");
+const getTotalExpenses = document.getElementById("totalExpenses");
+const getRemainingBudge = document.getElementById("remainingBudge");
 const getRow = document.getElementById("row");
-const getPara = document.getElementById("para");
-let arry = [];
-let sum = 0;
+let arr = [];
+let totalExpenses = 0;
 
-function add() {
-  let numVal = parseFloat(getInpNo.value.trim());
-  let txtVal = getInpTxt.value.trim();
-  let upprCase = txtVal.charAt(0).toUpperCase() + txtVal.toLowerCase().slice(1);
-
-  if (getInpTxt.value === "" || getInpNo.value === "" || numVal <= 0) {
-    alert("Please fill in the fields and valid amount");
+function addBudge() {
+  if (getInpBudge.value === "" || getInpBudge.value <= 0) {
+    alert("Please enter a valid budget amount.");
     return;
   }
+  getTotalBudge.innerHTML = `$${getInpBudge.value}`;
+  getInpBudge.value = "";
+}
+
+function add() {
+  let txtVal = getInpTxt.value.trim();
+  let numVal = parseFloat(getInpNo.value.trim());
+
+  if (
+    getInpTxt.value == "" ||
+    getInpNo.value == "" ||
+    getInpNo.value <= 0 ||
+    getTotalBudge.innerHTML == "$0"
+  ) {
+    alert("Please enter a valid expense, amount and budget.");
+    return;
+  }
+
   getRow.innerHTML += `
   <tr id="tr1">
-    <td> ${1} </td>
-    <td> ${upprCase} </td>
-    <td> ${numVal} </td>
-    <td id="tdBtn">
-    <i class="fa-solid fa-pen-to-square" id="btn4" onclick"edt(e)"></i>
-    <i class="fa-solid fa-trash" id="btn3" onclick="rmve(this)"></i>
-    </td>
+  <td> ${1} </td>
+  <td> ${txtVal} </td>
+  <td> ${numVal} </td>
+  <td id="tdBtn">
+  <i class="fa-solid fa-pen-to-square" id="btn4" onclick"edt(e)"></i>
+  <i class="fa-solid fa-trash" id="btn3" onclick="rmve(this)"></i>
+  </td>
   </tr>`;
-  // arry.push(numVal);
-  // sum = arry.reduce((acc, curr) => acc + curr);
-  // getPara.innerHTML = `<span id="dolr">$</span>${sum}`;
-  getInpTxt.value = "";
-  getInpNo.value = "";
-}
 
-function clrAll() {
-  getRow.innerHTML = "";
-}
+  arr.push(numVal);
+  sum = arr.reduce((acc, curr) => acc + curr);
+  if (sum > getTotalBudge.innerHTML.replace("$", "")) {
+    alert("You have reached your budget limit.");
+    return;
+  }
+  getTotalExpenses.innerHTML = `$${sum}`
 
-function edt(e) {
-  console.log(e.parentNode.parentNode);
-}
-
-function rmve(e) {
-  e.parentNode.parentNode.remove();
+  getInpTxt.value = ""
+  getInpNo.value = ""
 }
