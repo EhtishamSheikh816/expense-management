@@ -38,7 +38,7 @@ function add() {
   <td> ${numVal} </td>
   <td id="tdBtn">
   <i class="fa-solid fa-pen-to-square" id="btn4" onclick"edt(e)"></i>
-  <i class="fa-solid fa-trash" id="btn3" onclick="rmve(this)"></i>
+  <i class="fa-solid fa-trash" id="btn3" onclick="remve(this)"></i>
   </td>
   </tr>`;
 
@@ -46,10 +46,34 @@ function add() {
   sum = arr.reduce((acc, curr) => acc + curr);
   if (sum > getTotalBudge.innerHTML.replace("$", "")) {
     alert("You have reached your budget limit.");
+    getRow.innerHTML = "";
+    getInpTxt.value = "";
+    getInpNo.value = "";
     return;
   }
-  getTotalExpenses.innerHTML = `$${sum}`
+  getTotalExpenses.innerHTML = `$${sum}`;
 
-  getInpTxt.value = ""
-  getInpNo.value = ""
+  let minus = getTotalBudge.innerHTML.replace("$", "") - sum;
+  getRemainingBudge.innerHTML = `$${minus}`;
+
+  getInpTxt.value = "";
+  getInpNo.value = "";
+}
+
+function remve(e) {
+  e.parentNode.parentNode.remove();
+  alert( "Expense removed successfully.");
+}
+
+function clrAll() {
+  getRow.innerHTML = "";
+  getTotalBudge.innerHTML = "$0";
+  getTotalExpenses.innerHTML = "$0";
+  getRemainingBudge.innerHTML = "$0";
+  getInpBudge.value = "";
+  getInpTxt.value = "";
+  getInpNo.value = "";
+  arr = [];
+  totalExpenses = 0;
+  alert("All data cleared successfully.");
 }
