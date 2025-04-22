@@ -6,7 +6,11 @@ const getTotalExpenses = document.getElementById("totalExpenses");
 const getRemainingBudge = document.getElementById("remainingBudge");
 const getRow = document.getElementById("row");
 let arr = [];
+let rowArr = []
 let totalExpenses = 0;
+let count = 0
+
+
 
 function addBudge() {
   if (getInpBudge.value === "" || getInpBudge.value <= 0) {
@@ -31,13 +35,19 @@ function add() {
     return;
   }
 
-  getRow.innerHTML += `
-  <tr id="tr1">
-  <td> ${1} </td>
+  let rowLen = getRow.children.length + 1
+  rowArr.push(rowLen)
+  rowArr.forEach((i)=>{
+    count = i
+  })
+
+getRow.innerHTML += `
+<tr id="tr1">
+  <td> ${count} </td>
   <td> ${txtVal} </td>
   <td> ${numVal} </td>
   <td id="tdBtn">
-  <i class="fa-solid fa-pen-to-square" id="btn4" onclick"edt(e)"></i>
+  <i class="fa-solid fa-pen-to-square" id="btn4" onclick="edt(this)"></i>
   <i class="fa-solid fa-trash" id="btn3" onclick="remve(this)"></i>
   </td>
   </tr>`;
@@ -46,7 +56,7 @@ function add() {
   sum = arr.reduce((acc, curr) => acc + curr);
   if (sum > getTotalBudge.innerHTML.replace("$", "")) {
     alert("You have reached your budget limit.");
-    getRow.innerHTML = "";
+    // getRow.innerHTML = "";
     getInpTxt.value = "";
     getInpNo.value = "";
     return;
@@ -58,6 +68,13 @@ function add() {
 
   getInpTxt.value = "";
   getInpNo.value = "";
+}
+
+const edt = (e) => {
+  let parent = e.parentNode.parentNode
+  getInpTxt.value = parent.children[1].textContent.trim()
+  getInpNo.value = parent.children[2].textContent.trim()
+  parent.remove()
 }
 
 function remve(e) {
